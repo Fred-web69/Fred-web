@@ -1,3 +1,6 @@
+html {
+	font-family: "Helvetica";
+
 body {
 	background-color: #F8ECE0;
 }
@@ -19,10 +22,14 @@ p {
 }
 
 #orange_text {
-	color: orange;
+	color: #DF7401;
 	font-size: 20px;
 }
 
 #text_padding {
 	padding-left: 16px;
+}
+
+#banner {
+	background-color: #DF7401;
 }
