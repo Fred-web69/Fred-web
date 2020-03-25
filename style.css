@@ -1,17 +1,14 @@
 
 body {
 	background-color: #F8ECE0;
-	font-family: "Helvetica";
 }
 
 h1 {
 	font-size: 50px;
-	font-weight: bold;
 }
 
 h2 {
 	font-size: 40px;
-	font-weight: bold;
 }
 
 h3 {
@@ -32,5 +29,5 @@ p {
 }
 
 #banner {
-	background-color: #DF7401;
+	background-color: #FAAC58;
 }
