@@ -1,15 +1,16 @@
 h1 {
-	font-size: 5px;
-}
-
-h2 {
 	font-size: 60px;
 }
 
+h2 {
+	font-size: 50px;
+}
+
 p {
-	font-size: 7px;
+	font-size: 30px;
 }
 
 #orange_text {
 	color: orange;
+	font-size: 30px;
 }
