@@ -1,5 +1,28 @@
+body {
+	background-color: #F8ECE0;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+p {
+	font-size: 20px;
+}
 
 #orange_text {
 	color: orange;
-	font-size: 30px;
+	font-size: 20px;
+}
+
+#text_padding {
+	padding-left: 16px;
 }
