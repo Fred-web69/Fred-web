@@ -4,6 +4,8 @@ var ballSize = 100;
 var score =0;
 var gameState = "L1";
 
+var toLevel = 100;
+
 
 function setup() {
   createCanvas(600, 600);
@@ -48,19 +50,21 @@ function draw() {
     levelEleven();
   }
   
-  text(("Score: " + score), width/2, 40);
+  text(("Score: " + score ), width/2, 40);
+  //text(("Score: " + score + " (" + int(score /toLevel *100) + "%) " ), width/2, 40);
 } // end draw
 
 //start level one
 function levelOne(){
   text("Level 1", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
+
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
-    score= score +int(random(4,8));
+    score= score +int(random(4,7));
   }
-  if(score>100){
+  if(score>49){
     gameState = "L2";
   }
   
@@ -74,13 +78,15 @@ function levelTwo(){
   background(255,252,217);
   text("Level 2", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 80;
+  var ballSize = 70;
+//  var toLevel = 200;
+//  var toPrevLevel = 100;
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
-    score= score +int(random(6,11));
+    score= score +int(random(5,10));
   }
-  if(score>200){
+  if(score>139){
   gameState = "L3";
   }
   
@@ -91,15 +97,16 @@ function levelTwo(){
 
 // start level three
 function levelThree(){
+  background(239,255,207);
   text("Level 3", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 64;
+  var ballSize = 49;
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
-    score= score +int(random(8,14));
+    score= score +int(random(7,15));
   }
-  if(score>300){
+  if(score>299){
     gameState = "L4";
   }
   
@@ -110,15 +117,16 @@ function levelThree(){
 
 //start level four
 function levelFour(){
+  background(255, 236, 199);
   text("Level 4", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 51;
+  var ballSize = 34;
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
-    score= score +int(random(10,17));
+    score= score +int(random(10,22));
   }
-  if(score>400){
+  if(score>599){
     gameState = "L5";
   }
   
@@ -129,15 +137,16 @@ function levelFour(){
 
 //start level five
 function levelFive(){
+  background(163, 220, 255);
   text("Level 5", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 40;
+  var ballSize = 23;
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
-    score= score +int(random(12,20));
+    score= score +int(random(15,32));
   }
-  if(score>500){
+  if(score>1199){
     gameState = "L6";
   }
   
@@ -148,15 +157,16 @@ function levelFive(){
 
 //start level six
 function levelSix(){
+  background(225, 158, 232);
   text("Level 6", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 32;
+  var ballSize = 16;
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
-    score= score +int(random(14,23));
+    score= score +int(random(21,48));
   }
-  if(score>600){
+  if(score>2399){
     gameState = "L7";
   }
   
@@ -166,17 +176,95 @@ function levelSix(){
 //end level six
 
 //start level seven
-function levelSix(){
+function levelSeven(){
+  background(176, 76, 99);
   text("Level 7", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 25;
+  var ballSize = 11;
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
-    score= score +int(random(14,23));
+    score= score +int(random(30,70));
   }
-  if(score>600){
-    gameState = "L7";
+  if(score>4799){
+    gameState = "L8";
+  }
+  
+  line(ballx, bally, mouseX, mouseY);
+  ellipse(ballx, bally, ballSize, ballSize);
+} 
+//end level seven
+
+//start level eight
+function levelEight(){
+  background(48, 45, 135);
+  text("Level 8", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  var ballSize = 8;
+  if (distToBall <ballSize/2){
+    ballx = random(width);
+    bally= random(height);
+    score= score +int(random(42,103));
+  }
+  if(score>9599){
+    gameState = "L9";
+  }
+  
+  line(ballx, bally, mouseX, mouseY);
+  ellipse(ballx, bally, ballSize, ballSize);
+} 
+//end level eight
+
+//start level nine
+function levelNine(){
+  background(186, 0, 0);
+  text("Level 9", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  var ballSize = 5;
+  if (distToBall <ballSize/2){
+    ballx = random(width);
+    bally= random(height);
+    score= score +int(random(59,152));
+  }
+  if(score>19199){
+    gameState = "L10";
+  }
+  
+  line(ballx, bally, mouseX, mouseY);
+  ellipse(ballx, bally, ballSize, ballSize);
+} 
+//end level nine
+
+//start level ten
+function levelTen(){
+  background(255, 0, 0);
+  text("Level 10", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  var ballSize = 4;
+  if (distToBall <ballSize/2){
+    ballx = random(width);
+    bally= random(height);
+    score= score +int(random(82,224));
+  }
+  if(score>38399){
+    gameState = "L11";
+  }
+  
+  line(ballx, bally, mouseX, mouseY);
+  ellipse(ballx, bally, ballSize, ballSize);
+} 
+//end level ten
+
+//start level eleven
+function levelEleven(){
+  background(0, 0, 0);
+  text("How the fuck are you able to get this far", width/2, height-20);
+  var distToBall= dist(ballx, bally, mouseX, mouseY);
+  var ballSize = 2;
+  if (distToBall <ballSize/2){
+    ballx = random(width);
+    bally= random(height);
+    score= score +int(random(115,329));
   }
   
   line(ballx, bally, mouseX, mouseY);
