@@ -3,8 +3,15 @@ var bally = 300;
 var ballSize = 100;
 var score =0;
 var gameState = "L1";
+var bubble;
 
-var toLevel = 100;
+var toLevel = 50;
+var fromLevel = 0;
+var levelCheck = 0;
+
+function preload() {
+bubble = loadImage('bubble.png');
+}
 
 
 function setup() {
@@ -50,12 +57,18 @@ function draw() {
     levelEleven();
   }
   
-  text(("Score: " + score ), width/2, 40);
-  //text(("Score: " + score + " (" + int(score /toLevel *100) + "%) " ), width/2, 40);
+  //text(("Score: " + score ), width/2, 40);
+  //text(("Testing: " + ballSize ), width/2, 40);
+  //text(("Score: " + score + " (" + int( score /toLevel *100) + "%) " ), width/2, 40);
+  //text(("Score: " + score + " (" + int( (score -fromLevel) /toLevel *100) + "%) " ), width/2, 40);
+  
+  // ( 103 - 50 ) / 140 * 100 - 100
+  
 } // end draw
 
 //start level one
 function levelOne(){
+  text(("Score: " + score + " (" + int( score /toLevel *100) + "%) " ), width/2, 40);
   text("Level 1", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
 
@@ -69,7 +82,11 @@ function levelOne(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -50, bally -50, ballSize, ballSize);
+  
 } 
 // end level one
 
@@ -79,8 +96,14 @@ function levelTwo(){
   text("Level 2", width/2, height-20);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
   var ballSize = 70;
-//  var toLevel = 200;
-//  var toPrevLevel = 100;
+  var fromLevel = 50;
+  var levelCheck = 100;
+  var toLevel = 140;
+  
+//SCORE AND PROGRESS
+  text(("Testing " + score /toLevel), width/2, 40);
+//SCORE AND PROGRESS
+
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -91,7 +114,10 @@ function levelTwo(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -34, bally -37, ballSize, ballSize);
 } 
 // end level two
 
@@ -111,7 +137,10 @@ function levelThree(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -24, bally -24, ballSize, ballSize);
 } 
 //end level three
 
@@ -131,7 +160,10 @@ function levelFour(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -17, bally -17, ballSize, ballSize);
 } 
 //end level four
 
@@ -151,7 +183,10 @@ function levelFive(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -12, bally -12, ballSize, ballSize);
 } 
 //end level five
 
@@ -171,7 +206,10 @@ function levelSix(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -8, bally -8, ballSize, ballSize);
 } 
 //end level six
 
@@ -191,7 +229,10 @@ function levelSeven(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -5, bally -5, ballSize, ballSize);
 } 
 //end level seven
 
@@ -211,7 +252,10 @@ function levelEight(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -4, bally -4, ballSize, ballSize);
 } 
 //end level eight
 
@@ -251,7 +295,10 @@ function levelTen(){
   }
   
   line(ballx, bally, mouseX, mouseY);
+  noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
+  stroke(0);
+  image(bubble, ballx -3, bally -3, ballSize, ballSize);
 } 
 //end level ten
 
