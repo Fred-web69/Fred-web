@@ -1,16 +1,44 @@
 var ballx = 300;
 var bally = 300;
 var ballSize = 100;
-var score =0;
+var score =38000;
 var gameState = "L1";
+
 var bubble;
+var virus;
+var rainbow;
+
+var windows;
+var sjsu;
+var minecraft;
+var pmd;
+var lofi;
+var protest;
+var warning;
+var bathroom;
+var space;
+var windows2;
+var congrats;
 
 var toLevel = 50;
 var fromLevel = 0;
-var levelCheck = 0;
 
 function preload() {
 bubble = loadImage('bubble.png');
+virus = loadImage('coronavirus.png');
+rainbow = loadImage('rainbow.gif');
+
+windows = loadImage('background_windows.jpg');
+sjsu = loadImage('background_sjsu.jpg');
+minecraft = loadImage('background_minecraft.jpg');
+pmd = loadImage('background_pmd.jpg');
+lofi = loadImage('background_lofi.jpg');
+protest = loadImage('background_protest.jpg');
+warning = loadImage('background_warning.gif');
+bathroom = loadImage('background_bathroom.gif');
+space = loadImage('background_space.gif');
+windows2 = loadImage('background_windows2.jpg');
+congrats = loadImage('background_congrats.jpg');
 }
 
 
@@ -25,9 +53,11 @@ function draw() {
   background(220);
   if(gameState == "L1"){
     levelOne();
+    //COMPLETE//
   }
   if(gameState == "L2"){
     levelTwo();
+    //COMPLETE//
   }
   if(gameState == "L3"){
     levelThree();
@@ -58,7 +88,6 @@ function draw() {
   }
   
   //text(("Score: " + score ), width/2, 40);
-  //text(("Testing: " + ballSize ), width/2, 40);
   //text(("Score: " + score + " (" + int( score /toLevel *100) + "%) " ), width/2, 40);
   //text(("Score: " + score + " (" + int( (score -fromLevel) /toLevel *100) + "%) " ), width/2, 40);
   
@@ -68,8 +97,12 @@ function draw() {
 
 //start level one
 function levelOne(){
-  text(("Score: " + score + " (" + int( score /toLevel *100) + "%) " ), width/2, 40);
-  text("Level 1", width/2, height-20);
+  
+  background(windows);
+
+  text(("Level 1   (" + int( score /toLevel *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
   var distToBall= dist(ballx, bally, mouseX, mouseY);
 
   if (distToBall <ballSize/2){
@@ -79,6 +112,7 @@ function levelOne(){
   }
   if(score>49){
     gameState = "L2";
+
   }
   
   line(ballx, bally, mouseX, mouseY);
@@ -92,17 +126,15 @@ function levelOne(){
 
 // start level two
 function levelTwo(){
-  background(255,252,217);
-  text("Level 2", width/2, height-20);
+  background(sjsu);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
   var ballSize = 70;
   var fromLevel = 50;
-  var levelCheck = 100;
   var toLevel = 140;
   
-//SCORE AND PROGRESS
-  text(("Testing " + score /toLevel), width/2, 40);
-//SCORE AND PROGRESS
+  text(("Level 2   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+
 
   if (distToBall <ballSize/2){
     ballx = random(width);
@@ -123,10 +155,15 @@ function levelTwo(){
 
 // start level three
 function levelThree(){
-  background(239,255,207);
-  text("Level 3", width/2, height-20);
+  background(minecraft);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
   var ballSize = 49;
+  var fromLevel = 140;
+  var toLevel = 300;
+  
+  text(("Level 3   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -146,10 +183,15 @@ function levelThree(){
 
 //start level four
 function levelFour(){
-  background(255, 236, 199);
-  text("Level 4", width/2, height-20);
+  background(pmd);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
   var ballSize = 34;
+  var fromLevel = 300;
+  var toLevel = 600;
+  
+  text(("Level 4   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -169,10 +211,15 @@ function levelFour(){
 
 //start level five
 function levelFive(){
-  background(163, 220, 255);
-  text("Level 5", width/2, height-20);
+  background(lofi);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
   var ballSize = 23;
+  var fromLevel = 600;
+  var toLevel = 1200;
+  
+  text(("Level 5   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -192,10 +239,15 @@ function levelFive(){
 
 //start level six
 function levelSix(){
-  background(225, 158, 232);
-  text("Level 6", width/2, height-20);
+  background(protest);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
   var ballSize = 16;
+  var fromLevel = 1200;
+  var toLevel = 2400;
+  
+  text(("Level 6   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -209,16 +261,28 @@ function levelSix(){
   noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
   stroke(0);
-  image(bubble, ballx -8, bally -8, ballSize, ballSize);
+  image(virus, ballx -9, bally -9, ballSize +3, ballSize +3);
 } 
 //end level six
 
 //start level seven
 function levelSeven(){
-  background(176, 76, 99);
-  text("Level 7", width/2, height-20);
+  background(warning);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
   var ballSize = 11;
+  var fromLevel = 2400;
+  var toLevel = 4800;
+  
+  stroke(255,255,255);
+  strokeWeight(3);
+  
+  text(("Level 7   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
+  strokeWeight(1);
+  
+  stroke(0);
+  
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -232,17 +296,32 @@ function levelSeven(){
   noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
   stroke(0);
-  image(bubble, ballx -5, bally -5, ballSize, ballSize);
+  image(rainbow, ballx -6, bally -6, ballSize, ballSize);
+  
+  
 } 
 //end level seven
 
 //start level eight
 function levelEight(){
-  background(48, 45, 135);
-  text("Level 8", width/2, height-20);
+  background(bathroom);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 8;
+  var ballSize = 8;  
+  var fromLevel = 4800;
+  var toLevel = 9600;
+  
+  stroke(255,255,255);
+  strokeWeight(3);
+  
+  text(("Level 8   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
+  strokeWeight(1);
+  
+  stroke(0);
+  
   if (distToBall <ballSize/2){
+    
     ballx = random(width);
     bally= random(height);
     score= score +int(random(42,103));
@@ -261,10 +340,22 @@ function levelEight(){
 
 //start level nine
 function levelNine(){
-  background(186, 0, 0);
-  text("Level 9", width/2, height-20);
+  background(space);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 5;
+  var ballSize = 5;  
+  var fromLevel = 9600;
+  var toLevel = 19200;
+  
+  stroke(255,255,255);
+  strokeWeight(3);
+  
+  text(("Level 9   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+    
+  strokeWeight(1);
+  
+  stroke(0);
+  
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -281,10 +372,15 @@ function levelNine(){
 
 //start level ten
 function levelTen(){
-  background(255, 0, 0);
-  text("Level 10", width/2, height-20);
+  background(windows2);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 4;
+  var ballSize = 4;  
+  var fromLevel = 19200;
+  var toLevel = 38400;
+  
+  text(("Level 10"), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
@@ -298,16 +394,20 @@ function levelTen(){
   noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
   stroke(0);
-  image(bubble, ballx -3, bally -3, ballSize, ballSize);
 } 
 //end level ten
 
 //start level eleven
 function levelEleven(){
-  background(0, 0, 0);
-  text("How the fuck are you able to get this far", width/2, height-20);
+  background(congrats);
   var distToBall= dist(ballx, bally, mouseX, mouseY);
-  var ballSize = 2;
+  var ballSize = 2;  
+  var fromLevel = 38400;
+  var toLevel = 99999999;
+  
+  text(("Level 10"), width/2, height-20);
+  text(("Score: " + score), width/2, 40);
+  
   if (distToBall <ballSize/2){
     ballx = random(width);
     bally= random(height);
