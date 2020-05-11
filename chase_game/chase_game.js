@@ -1,7 +1,7 @@
 var ballx = 300;
 var bally = 300;
 var ballSize = 100;
-var score = 9500;
+var score = 0;
 var gameState = "L1";
 
 var bubble;
