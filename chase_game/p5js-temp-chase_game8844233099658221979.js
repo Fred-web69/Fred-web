@@ -1,12 +1,13 @@
 var ballx = 300;
 var bally = 300;
 var ballSize = 100;
-var score = 0;
+var score = 9000;
 var gameState = "L1";
 
 var bubble;
 var virus;
 var rainbow;
+var fly;
 
 var windows;
 var sjsu;
@@ -27,6 +28,7 @@ function preload() {
 bubble = loadImage('bubble.png');
 virus = loadImage('coronavirus.png');
 rainbow = loadImage('rainbow.gif');
+fly = loadImage('fly.png');
 
 windows = loadImage('background_windows.jpg');
 sjsu = loadImage('background_sjsu.jpg');
@@ -334,7 +336,7 @@ function levelEight(){
   noStroke();
   ellipse(ballx, bally, ballSize, ballSize);
   stroke(0);
-  image(bubble, ballx -4, bally -4, ballSize, ballSize);
+  image(fly, ballx -9, bally -9, ballSize +10, ballSize +10);
 } 
 //end level eight
 
