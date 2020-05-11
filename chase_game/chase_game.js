@@ -1,7 +1,7 @@
 var ballx = 300;
 var bally = 300;
 var ballSize = 100;
-var score = 9000;
+var score = 9500;
 var gameState = "L1";
 
 var bubble;
@@ -17,9 +17,11 @@ var lofi;
 var protest;
 var warning;
 var bathroom;
+var bathroom2;
 var space;
 var windows2;
 var congrats;
+
 
 var toLevel = 50;
 var fromLevel = 0;
@@ -38,6 +40,7 @@ lofi = loadImage('background_lofi.jpg');
 protest = loadImage('background_protest.jpg');
 warning = loadImage('background_warning.gif');
 bathroom = loadImage('background_bathroom.gif');
+bathroom2 = loadImage('background_bathroom2.gif');
 space = loadImage('background_space.gif');
 windows2 = loadImage('background_windows2.jpg');
 congrats = loadImage('background_congrats.jpg');
@@ -328,6 +331,20 @@ function levelEight(){
     bally= random(height);
     score= score +int(random(42,103));
   }
+  
+  if(score>9300 && score<9600){
+    background(bathroom2);
+    stroke(255,255,255);
+    strokeWeight(3);
+    text(("Level 8   (" + int( (score -fromLevel) /(toLevel -fromLevel) *100) + "%) " ), width/2, height-20);
+    text(("Score: " + score), width/2, 40);
+    
+    strokeWeight(1);
+  
+    stroke(0);
+  
+  }
+  
   if(score>9599){
     gameState = "L9";
   }
