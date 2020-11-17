@@ -27,6 +27,7 @@ function draw() {
    score = score * 1.02;
    framecount = 0;
   }
+//after each millisecond, increase score by *1.02
   
   var n = 1;
   var x = 0;
@@ -43,7 +44,8 @@ function draw() {
     circle(x, y, 5);
     n = n + 1;
   }
- 
+//modifies the # of dots
+//i really want to smash this fucking computer. this doesn't wor
 }
 
 
@@ -55,3 +57,5 @@ function mouseClicked() {
     score = score - 1;
   }
 }
+//if mouse is clicked, score -1
+//if score=0, open success.html
