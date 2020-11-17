@@ -50,7 +50,7 @@ function draw() {
 
 function mouseClicked() {
   if(score < 2){
-    window.open("http://example.com/","_self");
+    window.open("success.html","_self");
   } else {
     score = score - 1;
   }
