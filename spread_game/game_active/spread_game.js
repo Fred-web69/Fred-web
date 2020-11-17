@@ -53,6 +53,8 @@ function draw() {
 function mouseClicked() {
   if(score < 2){
     window.open("success.html","_self");
+	//this will not work on Safari. chrome #1 web browser.
+
   } else {
     score = score - 1;
   }
