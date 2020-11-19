@@ -42,7 +42,7 @@ function draw() {
     circle(x, y, 5);
     n = n + 1;
   }
-//modifies the # of dots
+//modifies the # of dots as score increases
 //i really want to smash this fucking computer. this doesn't wor
 }
 
