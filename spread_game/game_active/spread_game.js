@@ -50,7 +50,7 @@ function draw() {
 
 function mouseClicked() {
   if(score < 2){
-    score = 0
+    score = 0;
     //window.open("success.html","_self");
 	//this will not work on Safari. chrome #1 web browser.
 
