@@ -43,7 +43,6 @@ function draw() {
     n = n + 1;
   }
 //modifies the # of dots as score increases
-//i really want to smash this fucking computer. this doesn't wor
 }
 
 
