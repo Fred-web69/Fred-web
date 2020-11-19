@@ -25,7 +25,7 @@ function draw() {
    score = score * 1.01;
    framecount = 0;
   }
-//after each millisecond, increase score by *1.02
+//after each millisecond, increase score by *1.01
   
   var n = 1;
   var x = 0;
