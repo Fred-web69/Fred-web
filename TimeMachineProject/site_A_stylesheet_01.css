@@ -1,0 +1,144 @@
+/*
+For decorating the navigation bar
+*/
+
+nav {
+	text-align: center;
+	background-color: #003891;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+}
+
+nav a {
+	text-decoration: none;
+	font-family: Helvetica;
+	padding: .2em 1em;
+	color: #fff;
+}
+
+nav a:hover {
+	color: #003891;
+	background-color: #fff;
+}
+
+nav a.current{
+	color: #003891;
+	background-color: gray;
+}
+
+/*
+For decorating the header
+*/
+
+
+.headerImg {
+	height: 400px;
+	width: 500px;
+	opacity: 1;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+#email {
+	text-decoration: none;
+	color: #003891;
+}
+
+.top-right {
+	position: absolute;
+	top: 0;
+	right: 13%;
+	font-size: 5em;
+	color: #003891;
+	padding-top: 90px;
+}
+
+.bottom-right {
+	position: absolute;
+	bottom: 76%;
+	right: 13%;
+	padding: 5px;
+}
+
+/*
+For decorating the slideshow
+*/
+
+@keyframes miniSlide{
+	25% {opacity: 1;}
+	40% {opacity: 0;}
+}
+
+.miniSlide img:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.miniSlide img:nth-child(2) {
+	animation-delay: 5s;
+}
+
+.miniSlide img:nth-child(3) {
+	animation-delay: 10s;
+}
+
+.miniSlide img:nth-child(4) {
+	animation-delay: 15s;
+}
+
+.miniSlide img {
+	position: absolute;
+	animation: miniSlide 20s infinite;
+	opacity: 0;
+}
+
+/*
+For decorating the body and shit
+*/
+
+body {
+	font-family: helvetica;
+	background-color: #d9e8ff;
+}
+
+#print {
+	color: blue;
+}
+
+#title {
+	color: #003891;
+	text-align: center;
+	font-size: 25px;
+}
+
+#letter {
+	padding-left: 70px;
+	padding-right: 250px;
+}
+
+#referencetable {
+	padding-left: 600px;
+	font-size: 30px;
+}
+
+th{
+	text-align: left;
+	vertical-align: top;
+	font-size: 130%;
+	padding-right: 10px;
+	padding-left: 30px;
+	color: #BADA55;
+}
+
+td{
+	vertical-align: top;
+	text-align: left;
+	padding-left: 30px;
+	padding-right: 10px;
+}
+
+#largetext{
+	font-size: 50px;
+	text-align: center;
+	color: #003891;
+}
