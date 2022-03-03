@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<style>
+
+		img {
+			max-width: 80%;
+			height: auto;
+		}
+
+	</style>
+
+	<title>Tree Postcard</title>
+
+	<script type="text/javascript">
+
+		var thedate   = new Date();
+		var hourofday = thedate.getUTCHours();
+		function morning(){
+			//13 = 5 here, 18 = 10 here
+			if (hourofday >= 13 && hourofday <= 18){
+				return true;
+			}
+			return false;
+		}
+
+		function noon(){
+			//19 = 11 here, 21 = 13 here
+			if (hourofday >= 19 && hourofday <= 21){
+				return true;
+			}
+			return false;
+		}
+
+		function afternoon(){
+			//22 = 14 here, 1 = 17 here
+			//NOTE = A value of 24 is actually 0. 
+			if (hourofday >= 22 && hourofday <=23 || hourofday <= 1){
+				return true;
+			}
+			return false;
+		}
+
+		function night(){
+			//2 = 18 here, 12 = 4 here
+			if (hourofday >= 2 && hourofday <= 12){
+				return true;
+			}
+			return false;
+		}
+
+	</script>
+
+</head>
+
+<body>
+	
+	<header>
+		
+		<p>&nbsp;</p>
+
+	</header>
+	<center>
+
+
+
+		<script type="text/javascript">
+
+			if (morning()){
+				document.write("<img src='images/postcard_B1b.jpg'>");
+			}
+
+			if (noon()){
+				document.write("<img src='images/postcard_B2b.jpg'>")
+			}
+
+			if (afternoon()){
+				document.write("<img src='images/postcard_B3b.jpg'>")
+			}
+
+			if (night()){
+				document.write("<img src='images/postcard_B4b.jpg'>")
+			}
+
+		</script>
+
+		<p><a href="postcard_Bf.html">Flip over</a></p>
+
+		<br>
+
+		<p>This postcard adapts to the current time. Parts of the poem will reveal itself during certain times of the day. </p>
+
+	</center>
+
+	<footer>
+
+	</footer>
+
+</body>
+
+</html>
